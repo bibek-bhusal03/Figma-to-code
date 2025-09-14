@@ -1,4 +1,0 @@
-{
-  "watch": ["fetchFigmaWithExtractAndImages.js"],
-  "ignore": ["figmaImages/*", "figmaExtracted.json", "figmaFile.json"]
-}
