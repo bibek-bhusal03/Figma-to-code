@@ -47,9 +47,12 @@ def download_image(url: str, filepath: Path):
     if response.status_code != 200:
         raise RuntimeError(f"Failed to download image: {response.status_code}")
 
-    with open(filepath, "wb") as f:
+    f = open(filepath, "wb")
+    try:
         for chunk in response.iter_content(1024):
             f.write(chunk)
+    finally: 
+        f.close()
 
 
 def traverse(node, image_node_ids: set):
